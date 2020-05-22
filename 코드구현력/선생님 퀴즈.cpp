@@ -9,14 +9,14 @@ int main()
 
 	for (int i = 0; i < N; i++) {
 		res = 0;
-		cin >> num;
-		for (int i = 1; i <= num; i++) {
+		cin >> num; //구할 대상 수
+		for (int i = 1; i <= num; i++) { //1부터 자기자신까지의 합 구하기
 			res += i;
 			cout << res << endl;
 		}
-		cin >> ans_stu;
+		cin >> ans_stu; //학생의 답 받기
 
-		if (ans_stu == res) {
+		if (ans_stu == res) { //학생 답과 비교 
 			cout << "YES" << "\n";
 		}
 		else cout << "NO" << "\n";
