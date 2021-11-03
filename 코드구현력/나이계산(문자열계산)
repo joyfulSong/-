@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+//vector<char> number_split;
+
+int main()
+{
+	string number;
+	int age;
+	char sex;
+	string::iterator it;
+
+	cin >> number;
+
+	age = 119 - ((number[0]-'0') * 10 + (number[1]-'0')) + 1;
+	it = find(number.begin(), number.end(), '-');
+	if (it != number.end())
+	{
+		if (*(it + 1) == '1' || *(it + 1) == '3') sex = 'm';
+		else sex = 'w';
+	}
+
+	cout << age << " " << sex;
+
+	return 0;	
+}
