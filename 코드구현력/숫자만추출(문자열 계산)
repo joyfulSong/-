@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <string>
+
+int main()
+{
+	std::string set;
+	std::string::iterator it;
+
+	std::vector<int> ans;
+	int answer(0), cnt(0), i(0);
+
+	std::cin >> set;
+
+	for (it = set.begin(); it < set.end(); it++)
+	{
+		if (((int)*it > 64 && (int)*it < 91) || ((int)*it > 96 && (int)*it < 123)) continue;
+		else
+		{
+			ans.push_back(*it - '0');
+		}
+	}
+	
+	if (ans.front() == 0) i = 1;
+
+	for (i; i < ans.size(); i++)
+	{
+		answer += ans[i] * std::pow(10, (ans.size() - i - 1));
+	}
+
+	for (int i = 1; i < answer + 1; i++)
+	{
+		if (answer % i == 0) cnt++;
+	}
+
+	std::cout << answer << std::endl;
+	std::cout << cnt;
+	return 0;
+}
