@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+	std::string str, res;
+	std::string::iterator it;
+	std::getline(std::cin, str);
+
+	for (it = str.begin(); it < str.end(); it++) 
+	{
+		if (!(*it == ' '))
+		{
+			if ((int)(*it) >= 65 && (int)(*it) <= 90) *it = (char)((int)(*it) + 32);
+			res.push_back(*it);
+		}
+	}
+
+	std::cout << res << std::endl;
+
+}
